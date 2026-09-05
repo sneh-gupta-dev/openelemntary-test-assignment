@@ -1,0 +1,9 @@
+{
+  "test_name": "Checkout flow > TC-02: successful checkout with currency switched to INR",
+  "test_file": "automation/playwright/tests/checkout.spec.ts",
+  "ci_run_id": "gh-actions-run-48260",
+  "failure_log": "AssertionError: Total does not equal sum of line items\nExpected: 12927.64\nReceived: 12927.65\n\n  at tests/checkout.spec.ts:47:5\n\nOrder items: [{ name: 'Solar System Color Imager', price: 12295.98 }]\nShipping: 631.66\nSum: 12927.64\nDisplayed total: 12927.65",
+  "recent_diff": "diff --git a/src/currency/main.go b/src/currency/main.go\n@@ -142,7 +142,7 @@ func convert(amount Money, rate float64) Money {\n-\treturn roundMoney(amount.Units*rate + amount.Nanos*rate/1e9)\n+\treturn roundMoney(amount.Units*rate) + roundMoney(amount.Nanos*rate/1e9)\n }",
+  "history": "First failure. Introduced by a merged PR changing the currency conversion rounding logic (see recent_diff).",
+  "environment_notes": "No CI infrastructure changes around this time. Change is isolated to the currency service."
+}

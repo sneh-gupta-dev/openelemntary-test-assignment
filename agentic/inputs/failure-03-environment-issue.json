@@ -1,0 +1,9 @@
+{
+  "test_name": "Health Signal Integrity > TC-09: health status accurately reflects actual service state",
+  "test_file": "automation/observability/test_health_signal_integrity.py",
+  "ci_run_id": "gh-actions-run-48301",
+  "failure_log": "SKIPPED (docker command failed: is the stack running?)\n\nsubprocess.CalledProcessError: Command '['docker', 'inspect', 'astronomy-db', '--format', '{{json .State.Health}}']' returned non-zero exit status 1.\nstderr: Error: No such object: astronomy-db",
+  "recent_diff": "diff --git a/docker-compose.yml b/docker-compose.yml\n@@ -310,7 +310,7 @@ services:\n-  astronomy-db:\n+  astronomy_db:\n     image: postgres:18.4",
+  "history": "First failure after a docker-compose.yml service name change (hyphen to underscore) in an unrelated PR that was not expected to touch this test.",
+  "environment_notes": "CI runner successfully started containers; the failure is a name-mismatch between the test's hardcoded container name and the renamed service, not an actual infra outage."
+}

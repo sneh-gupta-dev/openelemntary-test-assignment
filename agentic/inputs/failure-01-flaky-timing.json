@@ -1,0 +1,9 @@
+{
+  "test_name": "Cart state consistency > TC-07: cart contents persist across a currency switch",
+  "test_file": "automation/playwright/tests/cart.spec.ts",
+  "ci_run_id": "gh-actions-run-48213",
+  "failure_log": "Error: expect(locator).toContainText(expected) failed\n\nLocator: locator('body')\nExpected string: \"₹\"\nReceived string: \"₹12,927.64\"  <-- WAIT, this actually contains it\n\nTimeout: 5000ms exceeded waiting for waitForLoadState('networkidle')\n\n  at tests/helpers/shop.ts:24:14\n  at tests/cart.spec.ts:38:5",
+  "recent_diff": null,
+  "history": "Passed on the last 14 CI runs. Failed once on run 48213, then passed again on re-run without any code changes.",
+  "environment_notes": "CI runner reported elevated load (3 other jobs running concurrently on the same host) at the time of failure."
+}
